@@ -296,13 +296,13 @@ ul.sub-menu {
 	position: absolute;
 	top: 30px;
 	left: 0;
-	background: rgba(0, 0, 0, 0.6);
+	background: rgb(255, 255, 255);
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	width: 220px;
-	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 3px 3px rgb(150, 150, 150);
+	/* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1); */
 	display: none;
 	z-index: 999;
 }
@@ -322,11 +322,11 @@ ul.sub-menu {
 }
 
 .navbar-nav li ul.sub-menu li a{
-  color: #fff;
+  color: #666;
 }
 
 .navbar-nav li ul.sub-menu li a:hover{
-    color: #ef4f91;
+    color: #222;
 }
 
 .fa-angle-down{
@@ -593,7 +593,7 @@ ul.sub-menu {
 
 .pricing {
   position: absolute;
-  right: 40%;
+  right: 60%;
   top: 52%;
 }
 
