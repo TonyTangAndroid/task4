@@ -15,3 +15,4 @@ local.properties
 .idea/libraries
 .idea/workspace.xml
 Icon
+.DS_Store
