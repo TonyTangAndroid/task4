@@ -1996,7 +1996,8 @@ textarea.input-lg {
 .btn-default {
 	color: #333;
 	background-color: #fff;
-	border-color: #ccc
+	border-color: #ccc;
+	position: absolute;
 }
 
 .btn-default:hover,.btn-default:focus,.btn-default:active,.btn-default.active,.open .dropdown-toggle.btn-default

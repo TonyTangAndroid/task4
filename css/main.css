@@ -845,26 +845,26 @@ h2.title {
 .productinfo h2 {
     color: #771B61;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
 }
 
 .product-overlay h2 {
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 700;
 }
 
 .productinfo p {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 400;
     color: #696763;
 }
 
 .productinfo img {
-    width: 100%;
+    width: 150px;
 }
 
 .productinfo {
