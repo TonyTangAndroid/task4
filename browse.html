@@ -13,7 +13,18 @@
     <link href="css/price-range.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/featherlight.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+
+    <style type="text/css">
+        @media all {
+            .lightbox {
+                display: none;
+            }
+        }
+    </style>
+
+
     <script src="js/html5shiv.js"></script>
 
     <script type="text/javascript"></script>
@@ -21,6 +32,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.scrollUp.min.js"></script>
     <script src="js/price-range.js"></script>
+    <script src="js/featherlight.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
     <script src="js/respond.js"></script>
@@ -206,12 +218,14 @@
                             <li><a href="#">Highest Rated</a></li>
                             <li><a href="#">Most Reviews</a></li>
                         </ul>
-                        <div class="text-right"><ul class="pagination">
-                            <li class="active"><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">&raquo;</a></li>
-                        </ul></div>
+                        <div class="text-right">
+                            <ul class="pagination">
+                                <li class="active"><a href="">1</a></li>
+                                <li><a href="">2</a></li>
+                                <li><a href="">3</a></li>
+                                <li><a href="">&raquo;</a></li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="col-sm-4">
@@ -642,5 +656,12 @@
 
 
 <div id="id_footer"></div>
+
+<iframe class="lightbox" src="login.html" width="500" height="400" id="fl3" style="border:none;" webkitallowfullscreen
+        mozallowfullscreen allowfullscreen></iframe>
+
+<iframe class="lightbox" src="register.html" width="500" height="400" id="fl4" style="border:none;"
+        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 </body>
 </html>
