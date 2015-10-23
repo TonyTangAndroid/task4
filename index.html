@@ -42,18 +42,119 @@
             $("#id_header").load("header.html");
         });
     </script>
-
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <!--/head-->
 
-<body>
 
+<body>
 <div id="id_header"></div>
+
+
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide"
+                     data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#slider-carousel" data-slide-to="0"
+                            class="active"></li>
+                        <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        <li data-target="#slider-carousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-7">
+                                <h3>
+                                    <img src='images/home/UPMC_logo.jpg'
+                                         width="300px" height="56px"/>
+                                </h3>
+
+                                <h2>Get Healthy with UPMC</h2>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna aliqua.</p>
+                                <a href="search.html">
+                                    <button type="button" class="btn btn-default get">Get
+                                        it now
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-sm-5">
+                                <img src="images/home/home_ad1.jpg" class="girl img-responsive"
+                                     width="300px" height="200px" alt=""/>
+                                <!-- <img src="images/home/pricing.png"  class="pricing" alt="" /> -->
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-7">
+                                <h3>
+										<span><img src='images/home/UPMC_logo.jpg'
+                                                   width="300px" height="56px"/></span>
+                                </h3>
+
+                                <h2>Homecare on Discount</h2>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna aliqua.</p>
+                                <a href="search.html">
+                                    <button type="button" class="btn btn-default get">Get
+                                        it now
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-sm-5">
+                                <img src="images/home/sale_small.jpg"
+                                     class="girl img-responsive" width="300px" height="200px" alt=""/>
+                                <!-- <img src="images/home/30off.png"  class="pricing" alt="" /> -->
+                            </div>
+                        </div>
+
+                        <div class="item">
+
+                            <div class="col-sm-7">
+                                <h3>
+										<span><img src='images/home/UPMC_logo.jpg'
+                                                   width="300px" height="56px"/></span>
+                                </h3>
+
+                                <h2>Build stronger immune system</h2>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna aliqua.</p>
+                                <a href="search.html">
+                                    <button type="button" class="btn btn-default get">Get
+                                        it now
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-sm-5">
+                                <img src="images/home/home_ad3.jpg" class="girl img-responsive"
+                                     width="300px" height="200px" alt=""/> <img src="images/home/30off.png"
+                                                                                class="pricing"
+                                                                                alt=""/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs"
+                       data-slide="prev"> <i class="fa fa-angle-left"></i>
+                    </a> <a href="#slider-carousel"
+                            class="right control-carousel hidden-xs" data-slide="next"> <i
+                        class="fa fa-angle-right"></i>
+                </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 <section>
     <div class="container">
@@ -197,9 +298,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v1.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -214,9 +329,22 @@
                                         <div class="productinfo text-center">
                                             <img src="images/home/v2.jpg" alt=""/>
 
-                                            <h2>$56</h2>
+                                            <h2>Vitamin B2</h2>
 
-                                            <p>Product X</p>
+                                            <p>$5.99 </p>
+
+                                            <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                            <p>
+                                                Rating
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                            </p>
+
+                                            <p>55 Reviews</p>
                                             <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                     class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
@@ -231,9 +359,22 @@
                                         <div class="productinfo text-center">
                                             <img src="images/home/v3.jpg" alt=""/>
 
-                                            <h2>$56</h2>
+                                            <h2>Vitamin B2</h2>
 
-                                            <p>Product X</p>
+                                            <p>$5.99 </p>
+
+                                            <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                            <p>
+                                                Rating
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                            </p>
+
+                                            <p>55 Reviews</p>
                                             <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                     class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
@@ -248,9 +389,22 @@
                                         <div class="productinfo text-center">
                                             <img src="images/home/v4.jpg" alt=""/>
 
-                                            <h2>$56</h2>
+                                            <h2>Vitamin B2</h2>
 
-                                            <p>Product X</p>
+                                            <p>$5.99 </p>
+
+                                            <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                            <p>
+                                                Rating
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                            </p>
+
+                                            <p>55 Reviews</p>
                                             <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                     class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
@@ -280,9 +434,27 @@
                                                 <div class="productinfo text-center">
                                                     <img src="images/home/v1.jpg" alt=""/>
 
-                                                    <h2>$56</h2>
+                                                    <h2>Vitamin B2</h2>
 
-                                                    <p>Product X</p>
+                                                    <p>$5.99 </p>
+
+                                                    <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                    <p>
+                                                        Rating
+                                                        <span class="glyphicon glyphicon-star"
+                                                              aria-hidden="true"></span>
+                                                        <span class="glyphicon glyphicon-star"
+                                                              aria-hidden="true"></span>
+                                                        <span class="glyphicon glyphicon-star"
+                                                              aria-hidden="true"></span>
+                                                        <span class="glyphicon glyphicon-star"
+                                                              aria-hidden="true"></span>
+                                                        <span class="glyphicon glyphicon-star-empty"
+                                                              aria-hidden="true"></span>
+                                                    </p>
+
+                                                    <p>55 Reviews</p>
                                                     <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                             class="fa fa-shopping-cart"></i>Add to cart</a>
                                                 </div>
@@ -297,9 +469,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v2.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -314,9 +500,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v3.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -331,9 +531,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v4.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -365,9 +579,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v11.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -382,9 +610,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v10.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -399,9 +641,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v1.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -416,9 +672,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v8.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -436,9 +706,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v2.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="#" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -453,9 +737,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v5.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="#" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -470,9 +768,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v8.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="#" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -487,9 +799,23 @@
                                             <div class="productinfo text-center">
                                                 <img src="images/home/v8.jpg" alt=""/>
 
-                                                <h2>$56</h2>
+                                                <h2>Vitamin B2</h2>
 
-                                                <p>Product X</p>
+                                                <p>$5.99 </p>
+
+                                                <p>Quanity 50pcs<font size="1">($0.15/pill)</font></p>
+
+                                                <p>
+                                                    Rating
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                    <span class="glyphicon glyphicon-star-empty"
+                                                          aria-hidden="true"></span>
+                                                </p>
+
+                                                <p>55 Reviews</p>
                                                 <a href="#" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
@@ -518,15 +844,9 @@
     </div>
 </section>
 
+<!--/#do_action-->
 <div id="id_footer"></div>
 
-</div>
-
-<iframe class="lightbox" src="login.html" width="500" height="400" id="fl3" style="border:none;" webkitallowfullscreen
-        mozallowfullscreen allowfullscreen></iframe>
-
-<iframe class="lightbox" src="register.html" width="500" height="400" id="fl4" style="border:none;"
-        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 </body>
 </html>
