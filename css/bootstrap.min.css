@@ -3128,6 +3128,11 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 	background-clip: padding-box
 }
+.scrollable-menu {
+   height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
 
 .dropdown-menu.pull-right {
 	right: 0;
