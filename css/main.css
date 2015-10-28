@@ -2322,8 +2322,12 @@ h2.title {
     margin-top: 16px;
 }
 .btn.btn-primary.compare{
-	
-    margin-top: 0px;
+	margin-top: 0px;
+    border-color: #771B61;
+    background-color: white;
+    color: #771B61;
+    border: 2px solid;
+    border-radius: 6px;
 }
 .blank-arrow {
     position: relative;
