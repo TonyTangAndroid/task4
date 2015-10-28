@@ -1,14 +1,26 @@
-Seperate recommedations from other site
 
+add to cart not working on search. -Cindy
 
-most people want to buy the product they picked on.
+About Us -Cindy
 
-add to cart not working.
+presentation:
+	demo vitamin, tony, compare....
+	after demo, slides talking about things we changed and why, maybe from HE or reviewers,design rationale, old picture of...and we fixed it...what's most interesting change you made
 
-compare part should not be between product info parts
+HE report -Lance
+
+********************Product Pages********************
+on compare page, make two tables into one to emphasize the comparison(special row for special feature)
+
+compare typically price per pill
+
+make compare page as light box
+
+compare part should not be between product info parts 
 
 add title for parts in product detail page/repeat the title maybe
 
+********************Checkout Pages*******************
 check out page grey row we need to fix
 
 billing info page reverse order of two parts
@@ -16,14 +28,3 @@ billing info page reverse order of two parts
 check out more three steps, add step to welcome to check out
 
 if loggin, not showing welcome to check out 
-
-on compare page, make two tables into one to emphasize the comparison(special row for special feature)
-
-compare typically price per pill
-
-make compare page as light box
-
-presentation:
-	demo vitamin, tony, compare....
-	after demo, slides talking about things we changed and why, maybe from HE or reviewers,design rationale, old picture of...and we fixed it...what's most interesting change you made
-
