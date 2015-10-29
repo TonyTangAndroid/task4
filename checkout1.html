@@ -39,6 +39,49 @@
     <script src="js/respond.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
 
+<script>
+
+$(document).ready(function(){
+    $(".container1").hide();
+    $(".container2").hide();
+    $(".container3").hide();
+    $(".container4").hide();
+    $(".container5").hide();
+
+    $("#hide").click(function(){
+        $(".container1").hide();
+        $(".container2").show();
+        
+        });
+    $("#show").click(function(){
+        $(".container1").show();
+        $(".container2").hide();
+     
+    });
+
+    $("#delivery").click(function(){
+        $(".container1").show();
+        $(".container4").hide();
+        
+        });
+
+    $("#cc").click(function(){
+        $(".container1").hide();
+        $(".container4").show();
+        
+        });
+
+      $("#result").click(function(){
+        $(".container5").show();
+              
+        });
+
+
+
+});
+
+</script>
+
 
 </head>
 <!--/head-->
@@ -89,7 +132,7 @@
 <div class="row">
 
     <div class="col-md-2"></div>
-    <div class="col-md-8"><img src="img/bar2.png" height="100%" width="100%" alt="bar">
+    <div class="col-md-8"><img src="img/bar2.png" height="80" width="600" alt="bar">
     </div>
     <div class="col-md-2"></div>
 
@@ -137,24 +180,30 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Shipping Options</h3>
+                            <p>&nbsp</p>
+                             
+                                <div class="btn-group">
+                              <button type="button" class="btn btn-default btn-lg" id="cc"><h4>Collect from UPMC location</h4> <h5>Free - Same Day</h5></button>
+                              <button type="button" class="btn btn-default btn-lg" id="delivery">
+                                <h4>Standard Delivery</h4> <h5> Free - 3 day delivery</h5></button>
+                            
+                                   </div>
+                                   <p>&nbsp</p>
+                       </div>             
+                    
 
-                    <div class="radio">
-                        <label><input type="radio" name="optradio">3-day Free Shipping</label>
-                    </div>
+    
 
-                    <div class="radio disabled">
-                        <label><input type="radio" name="optradio" disabled>Next-day Shipping: $10.00</label>
-                    </div>
-                </div>
-            
-
-              <div class="panel-body">
-         
-                <form class="form-horizontal">
+                  
+                    <div class="container1">
+                    <div class="panel-body">
+                     
+               
+                    <form class="form-horizontal">
                     <fieldset>
                         <!-- Address form -->
 
-                        <h3>Shipping Address</h3>
+                        <h4>New Shipping Address</h4>
 
                         <!-- full-name input-->
                         <div class="control-group">
@@ -222,16 +271,72 @@
                             </div>
                         </div>
                         <!-- country select -->
-                        
+                        <div class="control-group">
+                            <label class="control-label">Country</label>
+
+                            <div class="controls">
+                                <select id="country" name="country" class="input-xlarge">
+                                    <option value="" selected="selected">(please select a country)</option>
+                                    <option value="US">United States</option>
+                                    <option value="AF">Afghanistan</option>
+                                    <option value="AL">Albania</option>
+                                    <option value="DZ">Algeria</option>
+                                    <option value="AS">American Samoa</option>
+                                    <option value="AD">Andorra</option>
+                                    <option value="AO">Angola</option>
+                                    <option value="AI">Anguilla</option>
+                                    <option value="AQ">Antarctica</option>
+                                    <option value="AG">Antigua and Barbuda</option>
+                                    <option value="AR">Argentina</option>
+                                </select>
+                            </div>
+                        </div>
                     </fieldset>
                 </form>
-            
-        </div>
-</div>
+           
+             </div>
 
-        </div>
+            </div>  
+
+                            <div class="container4">
+                        <div class="panel-body" >
+                                <h4>Where do you want to collect from?</h4>
+                                <p> &nbsp;</p>
+                                    Enter your zip code
+                                    <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Zip Code...">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" id="result">Search</button>
+                                      </span>
+                                    </div><!-- /input-group -->
+                                            <div class="container5"> 
+                                               <p> &nbsp;</p>
+                                               <label><input type="radio" name="optCC"> UPMC Shadyside</label>
+                                                    
+                                                    <li>1st Floor, Pharmacy</li>
+                                                    <li>0.2 miles&nbsp;from location to collection point</li>
+                                                    <li>500 Center Av, Pittsburg</li>
+                                                   
+                                            </a>
+
+                                                           <p> &nbsp;</p>
+                                                    <label><input type="radio" name="optCC"> UPMC Mercy</label>
+                                                    <li>2nd Floor, Pharmacy</li>
+                                                    <li>2.2 miles&nbsp;from location to collection point</li>
+                                                    <li>500 Hill Av, Pittsburg</li>
+                                                        
+                                            </a>
 
 
+                                        </div>
+                            </div>
+                </div>
+
+            </div>
+
+
+            </div>
+ 
         <div class="col-md-3">
 
             <div class="panel panel-default">
@@ -291,7 +396,8 @@
 
     <div class="col-md-10">
 
-      
+       
+
 
     </div>
 
@@ -316,7 +422,7 @@
 
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <a class="btn btn-default btn-lg btn-success" href="checkout2.html">Continue</a>
+        <a class="btn btn-default btn-lg btn-success" href="checkout2_log.html">Continue</a>
 
         </button> </div>
     <div class="col-md-2"></div>
