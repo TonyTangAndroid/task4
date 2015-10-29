@@ -38,15 +38,38 @@
     <script src="js/respond.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-   
-<script>
+
+    <script>
+
         $(function () {
-            jQuery(document).on('click','#close_button',function(){
-    console.log("test");
-    jQuery('.featherlight').click();
+            jQuery(document).on('click', '#close_button', function () {
+                jQuery('.featherlight').click();
 
             });
         });
+
+        $(document).ready(function () {
+
+            $('#key_words_input').keypress(function (e) {
+                if (e.keyCode == 13) {
+                    doSearch();
+                }
+            });
+        });
+
+
+        function doSearch() {
+
+            var keyWords = document.getElementById("key_words_input").value;
+            console.log(keyWords);
+            if (keyWords === "low energy") {
+                location.href = 'search_result_by_symptom.html';
+            } else {
+                location.href = 'search.html';
+            }
+        }
+
+
     </script>
 
 
@@ -73,17 +96,20 @@
 
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary"
-                                        data-toggle="dropdown" style="border-radius:10px 0 0 10px"><span class="glyphicon glyphicon-user"/></span>
+                                        data-toggle="dropdown" style="border-radius:10px 0 0 10px"><span
+                                        class="glyphicon glyphicon-user"/></span>
                                     &nbsp;&nbsp;&nbsp;Account &nbsp;&nbsp;&nbsp;<span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu text-left" role="menu">
-                                    <li><a href="#" data-featherlight="#fl3" data-featherlight-other-close="btn-login">Sign in</a></li>
+                                    <li><a href="#" data-featherlight="#fl3" data-featherlight-other-close="btn-login">Sign
+                                        in</a></li>
                                     <li><a href="#" data-featherlight="#fl4">Register</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary"
-                                        data-toggle="dropdown" style="border-radius:0 10px 10px 0"><span class="glyphicon glyphicon-shopping-cart"/></span>
+                                        data-toggle="dropdown" style="border-radius:0 10px 10px 0"><span
+                                        class="glyphicon glyphicon-shopping-cart"/></span>
                                     &nbsp;&nbsp;&nbsp;Cart&nbsp;&nbsp;&nbsp; &nbsp;<span
                                             class="caret"></span>
                                 </button>
@@ -105,14 +131,16 @@
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <div class="input-group">
-                            <input type="text" class="form-control"
+                            <input id="key_words_input" type="text" class="form-control"
                                    placeholder="Search for..."> <span
                                 class="input-group-btn">
-									<button class="btn btn-default" type="button"
-                                            onclick="location.href = 'search.html';">
-                                        <span class='glyphicon glyphicon-search'/>
+									<button class="btn btn-default" type="button" id="search_button"
+                                            onclick="doSearch()"
+                                            >
+                                        <span class='glyphicon glyphicon-search'></span>
                                     </button>
 								</span>
+
                         </div>
                     </div>
 
@@ -226,131 +254,135 @@
         </div>
     </div>
     <!--/header-bottom-->
-  <div class="lightbox" id="fl3">    
-                <div id="loginbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-                    <div class="panel panel-success" >
-                            <div class="panel-heading">
-                                <div class="panel-title ">Sign In</div>
-                                <div style="float:right; font-size: 100%; position: relative; top:-10px">
-                                  <a href="#">Forgot password?</a></div>
-                            </div>     
-
-                            <div style="padding-top:30px" class="panel-body" >
-
-                                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                                    
-                                <form id="loginform" class="form-horizontal" role="form">
-                                            
-                                    <div style="margin-bottom: 25px" class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
-                                            </div>
-                                        
-                                    <div style="margin-bottom: 25px" class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-                                            </div>
-                                            
-
-                                        <div style="margin-top:10px" class="form-group">
-                                            <!-- Button -->
-
-                                            <div class="col-sm-12 controls">
-                                              <a id="close_button" href="index_login.html" class="btn btn-success">Login</a>
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <div class="col-md-12 control">
-                                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                                    Don't have an account! 
-                                                <a href="#" >
-                                                    Sign Up Here
-                                                </a>
-                                                </div>
-                                            </div>
-                                        </div>    
-                                    </form>     
-
-
-
-                                </div>                     
-                            </div>  
+    <div class="lightbox" id="fl3">
+        <div id="loginbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title ">Sign In</div>
+                    <div style="float:right; font-size: 100%; position: relative; top:-10px">
+                        <a href="#">Forgot password?</a></div>
                 </div>
-    
+
+                <div style="padding-top:30px" class="panel-body">
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                    <form id="loginform" class="form-horizontal" role="form">
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="login-username" type="text" class="form-control" name="username" value=""
+                                   placeholder="username or email">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="login-password" type="password" class="form-control" name="password"
+                                   placeholder="password">
+                        </div>
+
+
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+
+                            <div class="col-sm-12 controls">
+                                <a id="close_button" href="index_login.html" class="btn btn-success">Login</a>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 control">
+                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                    Don't have an account!
+                                    <a href="#">
+                                        Sign Up Here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
             </div>
-            
+        </div>
 
-   <div class="lightbox" id="fl4" >    
-                <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-                    <div class="panel panel-success" >
-                            <div class="panel-heading">
-                                <div class="panel-title ">Create Account</div>
-                              <!--  <div style="float:right; font-size: 100%; position: relative; top:-10px">
-                                  <a href="#">Forgot password?</a></div>-->
-                            </div>     
-
-                            <div style="padding-top:30px" class="panel-body" >
-
-                                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                                    
-                                <form id="loginform" class="form-horizontal" role="form">
-                                            
-                                    <div style="margin-bottom: 25px" class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
-                                            </div>
-                                        
-                                    <div style="margin-bottom: 25px" class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-                                            </div>
-                                            
-                                            <div style="margin-bottom: 25px" class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                <input id="login-password" type="password" class="form-control" name="password" placeholder="repeat password">
-                                            </div>
-
-                                        
-                                    <div class="input-group">
-                                              <div class="checkbox">
-                                                <label>
-                                                  <input id="login-remember" type="checkbox" name="remember" value="1"> I agreed the Terms and Conditions
-                                                </label>
-                                              </div>
-                                            </div>
-                                        
-
-                                        <div style="margin-top:10px" class="form-group">
-                                            <!-- Button -->
-
-                                            <div class="col-sm-12 controls">
-                                              <a id="close_button" href="#" class="btn btn-success">Create Account  </a>
-
-                                            </div>
-                                        </div>
+    </div>
 
 
-                                        <div class="form-group">
-                                            <div class="col-md-12 control">
-                                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                                    Already have an account? 
-                                                <a href="#" >
-                                                    Login In Here
-                                                </a>
-                                                </div>
-                                            </div>
-                                        </div>    
-                                    </form>     
-
-
-
-                                </div>                     
-                            </div>  
+    <div class="lightbox" id="fl4">
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title ">Create Account</div>
+                    <!--  <div style="float:right; font-size: 100%; position: relative; top:-10px">
+                        <a href="#">Forgot password?</a></div>-->
                 </div>
- </div>
+
+                <div style="padding-top:30px" class="panel-body">
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                    <form id="loginform" class="form-horizontal" role="form">
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="login-username" type="text" class="form-control" name="username" value=""
+                                   placeholder="username or email">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="login-password" type="password" class="form-control" name="password"
+                                   placeholder="password">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="login-password" type="password" class="form-control" name="password"
+                                   placeholder="repeat password">
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="login-remember" type="checkbox" name="remember" value="1"> I agreed the
+                                    Terms and Conditions
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+
+                            <div class="col-sm-12 controls">
+                                <a id="close_button" href="#" class="btn btn-success">Create Account </a>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 control">
+                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                    Already have an account?
+                                    <a href="#">
+                                        Login In Here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 </header>
 <!--header end-->
@@ -363,9 +395,6 @@
 <!--everything above is header-->
 <!--everything above is header-->
 <!--everything above is header-->
-
-
-
 
 
 <section id="slider">
@@ -620,24 +649,24 @@
 
                                                 <p><font size="4">$5.99 </font></p>
 
-                                                <p><font size="2">  50pcs($0.15/pill)</font></p>
+                                                <p><font size="2"> 50pcs($0.15/pill)</font></p>
 
                                                 <p><font size="2">
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star-empty"
                                                           aria-hidden="true"></span>
-                                                    </font>
+                                                </font>
                                                 </p>
 
                                                 <p><font size="2">55 Reviews</font></p>
                                                 <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>Add to cart</a>
                                             </div>
-<img src="images/home/new.png" class="new" alt=""/>
+                                            <img src="images/home/new.png" class="new" alt=""/>
                                         </div>
                                     </div>
                                 </a>
@@ -650,12 +679,12 @@
 
                                             <h2>Vitamin B2</h2>
 
-                                            <p><font size="4">$5.99</font> </p>
+                                            <p><font size="4">$5.99</font></p>
 
-                                             <p>  50pcs ($0.15/pill)</p>
+                                            <p> 50pcs ($0.15/pill)</p>
 
                                             <p>
-                                                 
+
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -667,7 +696,7 @@
                                             <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                     class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
-<img src="images/home/new.png" class="new" alt=""/>
+                                        <img src="images/home/new.png" class="new" alt=""/>
                                     </div>
                                 </div>
                             </a>
@@ -680,12 +709,12 @@
 
                                             <h2>Vitamin B2</h2>
 
-                                            <p><font size="4">$5.99</font> </p>
+                                            <p><font size="4">$5.99</font></p>
 
-                                             <p>  50pcs ($0.15/pill)</p>
+                                            <p> 50pcs ($0.15/pill)</p>
 
                                             <p>
-                                                 
+
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -697,7 +726,7 @@
                                             <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                     class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
-<img src="images/home/new.png" class="new" alt=""/>
+                                        <img src="images/home/new.png" class="new" alt=""/>
                                     </div>
                                 </div>
                             </a>
@@ -710,12 +739,12 @@
 
                                             <h2>Vitamin B2</h2>
 
-                                            <p><font size="4">$5.99</font> </p>
+                                            <p><font size="4">$5.99</font></p>
 
-                                             <p>  50pcs ($0.15/pill)</p>
+                                            <p> 50pcs ($0.15/pill)</p>
 
                                             <p>
-                                                 
+
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -727,7 +756,7 @@
                                             <a href="cart.html" class="btn btn-default add-to-cart"><i
                                                     class="fa fa-shopping-cart"></i>Add to cart</a>
                                         </div>
-<img src="images/home/new.png" class="new" alt=""/>
+                                        <img src="images/home/new.png" class="new" alt=""/>
                                     </div>
                                 </div>
                             </a>
@@ -755,9 +784,9 @@
 
                                                     <h2>Vitamin B2</h2>
 
-                                                    <p><font size="4">$5.99</font> </p>
+                                                    <p><font size="4">$5.99</font></p>
 
-                                                     <p>  50pcs ($0.15/pill)</p>
+                                                    <p> 50pcs ($0.15/pill)</p>
 
                                                     <p>
                                                          
@@ -790,12 +819,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -821,12 +850,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -852,12 +881,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -900,12 +929,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -931,12 +960,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -962,12 +991,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -993,12 +1022,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -1027,12 +1056,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -1058,12 +1087,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -1089,12 +1118,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                 <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -1120,12 +1149,12 @@
 
                                                 <h2>Vitamin B2</h2>
 
-                                                <p><font size="4">$5.99</font> </p>
+                                                <p><font size="4">$5.99</font></p>
 
-                                                <p>  50pcs ($0.15/pill)</p>
+                                                <p> 50pcs ($0.15/pill)</p>
 
                                                 <p>
-                                                     
+
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                                                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -1253,7 +1282,7 @@
         </div>
     </div>
 
-    <div class="footer-bottom" >
+    <div class="footer-bottom">
         <div class="container">
             <div class="row">
                 <p class="pull-left">Copyright © 2015 UPMC All rights
@@ -1268,7 +1297,6 @@
     </div>
 
 </footer>
-
 
 
 <!--Footer end -->
