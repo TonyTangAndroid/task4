@@ -44,7 +44,6 @@
         $(function () {
             jQuery(document).on('click', '#close_button', function () {
                 jQuery('.featherlight').click();
-
             });
         });
 
@@ -58,6 +57,18 @@
         });
 
 
+        console.log("change button");
+
+
+        function doLogin() {
+            jQuery('.featherlight').click();
+            var loginUserName = document.getElementById("user_account").value;
+            console.log("login username:" + loginUserName)
+            setCookie("user_name", loginUserName, 1);
+            doUpdateUserName();
+
+        }
+
         function doSearch() {
 
             var keyWords = document.getElementById("key_words_input").value;
@@ -66,6 +77,38 @@
                 location.href = 'search_result_by_symptom.html';
             } else {
                 location.href = 'search.html';
+            }
+        }
+
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function doUpdateUserName() {
+            var cookieName = getCookie("user_name");
+            if (cookieName !== "") {
+                console.log("cookie:" + cookieName);
+                var content = document.getElementById("login_status").innerHTML.replace("Account", "Hello, " + cookieName);
+                document.getElementById("login_status").innerHTML = content;
+            } else {
+                console.log("User has not login")
             }
         }
 
@@ -90,10 +133,10 @@
 
             <div class="col-md-5">
                 <div class="row">
-                    
-                    
+
+
                     <div class="col-md-12 text-right">
-                    
+
                         <div class="btn-group">
                             <div class="single-widget" style="margin-top =10">
                                 <h2></h2>
@@ -101,11 +144,11 @@
                                     <li><a href="about_us.html">About us</a></li>
                                 </ul>
                             </div>
-                            
+
                             <div class="btn-group">
-                                <button type="button" class="btn btn-primary"
+                                <button id="login_status" type="button" class="btn btn-primary"
                                         data-toggle="dropdown" style="border-radius:10px 0 0 10px"><span
-                                        class="glyphicon glyphicon-user"/></span>
+                                        class="glyphicon glyphicon-user"></span>
                                     &nbsp;&nbsp;&nbsp;Account &nbsp;&nbsp;&nbsp;<span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu text-left" role="menu">
@@ -279,7 +322,7 @@
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="login-username" type="text" class="form-control" name="username" value=""
+                            <input id="user_account" type="text" class="form-control" name="username" value=""
                                    placeholder="username or email">
                         </div>
 
@@ -294,7 +337,13 @@
                             <!-- Button -->
 
                             <div class="col-sm-12 controls">
-                                <a id="close_button" href="index_login.html" class="btn btn-success">Login</a>
+                                <!--<a id="close_button" href="index_login.html" class="btn btn-success">Login</a>-->
+
+                                <button class="btn btn-primary" type="button" id="login_button"
+                                        onclick="doLogin()"
+                                        >
+                                    Login
+                                </button>
 
                             </div>
                         </div>
@@ -321,7 +370,7 @@
 
 
     <div class="lightbox" id="fl4">
-        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <div class="panel-title ">Create Account</div>
@@ -331,25 +380,25 @@
 
                 <div style="padding-top:30px" class="panel-body">
 
-                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                    <div style="display:none" id="signup-alert" class="alert alert-danger col-sm-12"></div>
 
-                    <form id="loginform" class="form-horizontal" role="form">
+                    <form id="signupform" class="form-horizontal" role="form">
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="login-username" type="text" class="form-control" name="username" value=""
+                            <input id="signup-username" type="text" class="form-control" name="username" value=""
                                    placeholder="username or email">
                         </div>
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="login-password" type="password" class="form-control" name="password"
+                            <input id="signup-password-1" type="password" class="form-control" name="password"
                                    placeholder="password">
                         </div>
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="login-password" type="password" class="form-control" name="password"
+                            <input id="signup-password" type="password" class="form-control" name="password"
                                    placeholder="repeat password">
                         </div>
 
@@ -645,7 +694,7 @@
                     <h2 class="title text-center">BEST SELLERS THIS WEEK</h2>
 
                     <div class="tab-content">
-                        <div class="tab-pane fade active in" id="tshirt">
+                        <div class="tab-pane fade active in" id="tshirt-1">
                             <div class="col-sm-3">
                                 <a href="productDetail_1.html">
                                     <div class="product-image-wrapper">
@@ -1306,7 +1355,9 @@
 
 </footer>
 
-
+<script>
+    doUpdateUserName();
+</script>
 <!--Footer end -->
 </body>
 </html>
