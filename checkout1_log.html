@@ -44,16 +44,40 @@
 $(document).ready(function(){
     $(".container1").hide();
     $(".container2").hide();
+    $(".container3").hide();
+    $(".container4").hide();
+    $(".container5").hide();
+
     $("#hide").click(function(){
         $(".container1").hide();
         $(".container2").show();
         
         });
     $("#show").click(function(){
-        $(".container2").hide();
         $(".container1").show();
+        $(".container2").hide();
      
     });
+
+    $("#delivery").click(function(){
+        $(".container3").show();
+        $(".container4").hide();
+        
+        });
+
+    $("#cc").click(function(){
+        $(".container3").hide();
+        $(".container4").show();
+        
+        });
+
+      $("#result").click(function(){
+        $(".container5").show();
+              
+        });
+
+
+
 });
 
 </script>
@@ -156,18 +180,20 @@ $(document).ready(function(){
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h3>Shipping Options</h3>
-
-                    <div class="radio">
-                        <label><input type="radio" name="optradio">3-day Free Shipping</label>
-                    </div>
-
-                    <div class="radio disabled">
-                        <label><input type="radio" name="optradio" disabled>Next-day Shipping: $10.00</label>
-                    </div>
-                </div>
-
+                            <p>&nbsp</p>
+                             
+                                <div class="btn-group">
+                              <button type="button" class="btn btn-default btn-lg" id="cc"><h4>Collect from UPMC location</h4> <h5>Free - Same Day</h5></button>
+                              <button type="button" class="btn btn-default btn-lg" id="delivery">
+                                <h4>Standard Delivery</h4> <h5> Free - 3 day delivery</h5></button>
+                            
+                                   </div>
+                                   <p>&nbsp</p>
+                       </div>             
+                     <div class="container3">               
                     <div class="panel-body">
-                    <h3>Shipping Addresses</h3>
+                        <p>&nbsp</p>
+                    <h4>Shipping Addresses</h4>
 
                     <div class="radio">
                         <label><input type="radio" name="optradio" id="hide">You want to use an address from your Address Book </label>
@@ -191,76 +217,16 @@ $(document).ready(function(){
                     </div>
                     </div>
                     </div>
-            </div>
+                   </div>
 
-            </div>
+    
 
-
-  
-
-
-        <div class="col-md-3">
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3>Your Order</h3>
-
-                    <tr>
-                        <td class="cart_product">
-                            <a href="productDetail_1.html"> <img
-                                    src="http://www.cvs.com/bizcontent/merchandising/productimages/large/1650055711.jpg"
-                                    width="50px" height="50px" alt=""></a>
-                        </td>
-
-                        <td class="cart_description">
-                            <h5><a href="productDetail_1.html">One-A-Day VitaCraves Multivitamin - $10.33 </a></h5>
-
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="cart_product">
-                            <a href="productDetail_2.html"><img
-                                    src="https://www.cvs.com/bizcontent/merchandising/productimages/large/3367460195.jpg"
-                                    width="50px" height="50px" alt=""></a>
-                        </td>
-
-                        <td class="cart_description">
-                            <h5><a href="productDetail_2.html">Nature's Way Alive! Women's Energy Multivitamin -
-                                $12.29</a></h5>
-
-                        </td>
-                    </tr>
-
-
-                    <h4>Total: $ 22.62</h4>
-
-
-                </div>
-            </div>
-
-
-        </div>
-
-    </div>
-
-    <div class="col-md-2"></div>
-
-</div>
-
-
-<!-- Form -->
-
-
-<div class="row">
-
-    <div class="col-md-2"></div>
-
-    <div class="col-md-10">
-
-        <div class="container1">
-            <div class="row">
-                <form class="form-horizontal">
+                  
+                    <div class="container1">
+                    <div class="panel-body">
+                     
+               
+                    <form class="form-horizontal">
                     <fieldset>
                         <!-- Address form -->
 
@@ -354,8 +320,110 @@ $(document).ready(function(){
                         </div>
                     </fieldset>
                 </form>
+           
+             </div>
+
+            </div>  
+
+                            <div class="container4">
+                        <div class="panel-body" >
+                                <h4>Where do you want to collect from?</h4>
+                                <p> &nbsp;</p>
+                                    Enter your zip code
+                                    <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Zip Code...">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button" id="result">Search</button>
+                                      </span>
+                                    </div><!-- /input-group -->
+                                            <div class="container5"> 
+                                               <p> &nbsp;</p>
+                                               <label><input type="radio" name="optCC"> UPMC Shadyside</label>
+                                                    
+                                                    <li>1st Floor, Pharmacy</li>
+                                                    <li>0.2 miles&nbsp;from location to collection point</li>
+                                                    <li>500 Center Av, Pittsburg</li>
+                                                   
+                                            </a>
+
+                                                           <p> &nbsp;</p>
+                                                    <label><input type="radio" name="optCC"> UPMC Mercy</label>
+                                                    <li>2nd Floor, Pharmacy</li>
+                                                    <li>2.2 miles&nbsp;from location to collection point</li>
+                                                    <li>500 Hill Av, Pittsburg</li>
+                                                        
+                                            </a>
+
+
+                                        </div>
+                            </div>
+                </div>
+
             </div>
+
+
+            </div>
+ 
+        <div class="col-md-3">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Your Order</h3>
+
+                    <tr>
+                        <td class="cart_product">
+                            <a href="productDetail_1.html"> <img
+                                    src="http://www.cvs.com/bizcontent/merchandising/productimages/large/1650055711.jpg"
+                                    width="50px" height="50px" alt=""></a>
+                        </td>
+
+                        <td class="cart_description">
+                            <h5><a href="productDetail_1.html">One-A-Day VitaCraves Multivitamin - $10.33 </a></h5>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="cart_product">
+                            <a href="productDetail_2.html"><img
+                                    src="https://www.cvs.com/bizcontent/merchandising/productimages/large/3367460195.jpg"
+                                    width="50px" height="50px" alt=""></a>
+                        </td>
+
+                        <td class="cart_description">
+                            <h5><a href="productDetail_2.html">Nature's Way Alive! Women's Energy Multivitamin -
+                                $12.29</a></h5>
+
+                        </td>
+                    </tr>
+
+
+                    <h4>Total: $ 22.62</h4>
+
+
+                </div>
+            </div>
+
+
         </div>
+
+    </div>
+
+    <div class="col-md-2"></div>
+
+</div>
+
+
+<!-- Form -->
+
+
+<div class="row">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-10">
+
+       
 
 
     </div>
