@@ -1,4 +1,4 @@
-var KEY_USER_NAME = "key_usexxxxess";
+var KEY_USER_NAME = "key_uxess";
 $(function () {
     jQuery(document).on('click', '#close_button', function () {
         jQuery('.featherlight').click();
@@ -31,7 +31,7 @@ function doLogin() {
 
 
 function doLoginToCheckout() {
-    var loginUserName = "Tony";
+    var loginUserName = document.getElementById("login-username").value;
     setCookie(KEY_USER_NAME, loginUserName, 1);
     location.href = 'checkout1.html';
 }
@@ -82,7 +82,9 @@ function getCookie(cname) {
 
 
 function hasLogin() {
-    return getCookie(KEY_USER_NAME) !== "";
+    var cookieName = getCookie(KEY_USER_NAME);
+    console.log("cookie name:" + cookieName + "::::");
+    return cookieName !== null && cookieName !== "";
 }
 
 function doUpdateUserName() {
