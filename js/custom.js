@@ -1,4 +1,4 @@
-var KEY_USER_NAME = "key_usexxxrnamxxxxxess";
+var KEY_USER_NAME = "key_usexxxxess";
 $(function () {
     jQuery(document).on('click', '#close_button', function () {
         jQuery('.featherlight').click();
