@@ -32,6 +32,18 @@ a:focus {
 
 #about {
     vertical-align: -webkit-baseline-middle;
+    margin-right: 10px;
+    color: grey;
+}
+#about:hover {
+    color: #771b61;
+    outline: none;
+    text-decoration: none;
+}
+
+#about:focus {
+    outline: none;
+    outline-offset: 0;
 }
 a {
     -webkit-transition: 300ms;
