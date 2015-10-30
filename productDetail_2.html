@@ -35,16 +35,12 @@
     <script src="js/featherlight.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
     <script src="js/respond.js"></script>
-    <script>
-        $(function () {
-            $("#id_footer").load("footer.html");
-            $("#id_header").load("header.html");
-        });
-    </script>
-</head>
-<!--/head-->
+    <script src="js/jquery.min.js"></script>
 
+
+</head>
 
 <body>
 <!--header begin-->
@@ -57,27 +53,33 @@
 
             <div class="logo col-md-6">
                 <a href="index.html"> <img src="http://www.upmc.com/publishingimages/logo.png" alt="UPMC"></a>
+
             </div>
 
             <div class="col-md-5">
+
                 <div class="row">
+
                     <div class="col-md-12 text-right">
-
+                        <a id= "about" href="about_us.html">About us</a>
                         <div class="btn-group">
-
                             <div class="btn-group">
-                                <button type="button" class="btn btn-primary"
-                                        data-toggle="dropdown"><span class="glyphicon glyphicon-user"/></span>
+                                <button id="login_status" type="button" class="btn btn-primary"
+                                        data-toggle="dropdown" style="border-radius:10px 0 0 10px"><span
+                                        class="glyphicon glyphicon-user"></span>
                                     &nbsp;&nbsp;&nbsp;Account &nbsp;&nbsp;&nbsp;<span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu text-left" role="menu">
-                                    <li><a href="#" data-featherlight="#fl3">Sign in</a></li>
-                                    <li><a href="#" data-featherlight="#fl4">Register</a></li>
+                                    <li><a id="login_action_id" href="#" data-featherlight="#fl3"
+                                           data-featherlight-other-close="btn-login">Sign
+                                        in</a></li>
+                                    <!--<li><a href="#" data-featherlight="#fl4">Register</a></li>-->
                                 </ul>
                             </div>
                             <div class="btn-group">
                                 <button type="button" class="btn btn-primary"
-                                        data-toggle="dropdown"><span class="glyphicon glyphicon-shopping-cart"/></span>
+                                        data-toggle="dropdown" style="border-radius:0 10px 10px 0"><span
+                                        class="glyphicon glyphicon-shopping-cart"/></span>
                                     &nbsp;&nbsp;&nbsp;Cart&nbsp;&nbsp;&nbsp; &nbsp;<span
                                             class="caret"></span>
                                 </button>
@@ -99,14 +101,16 @@
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <div class="input-group">
-                            <input type="text" class="form-control"
+                            <input id="key_words_input" type="text" class="form-control"
                                    placeholder="Search for..."> <span
                                 class="input-group-btn">
-									<button class="btn btn-default" type="button"
-                                            onclick="location.href = 'search.html';">
-                                        <span class='glyphicon glyphicon-search'/>
+									<button class="btn btn-default" type="button" id="search_button"
+                                            onclick="doSearch()"
+                                            >
+                                        <span class='glyphicon glyphicon-search'></span>
                                     </button>
 								</span>
+
                         </div>
                     </div>
 
@@ -220,12 +224,140 @@
         </div>
     </div>
     <!--/header-bottom-->
-    <iframe class="lightbox" src="login.html" width="500" height="400" id="fl3" style="border:none;"
-            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="lightbox" id="fl3">
+        <div id="loginbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title ">Sign In</div>
+                    <div style="float:right; font-size: 100%; position: relative; top:-10px">
+                        <a href="#">Forgot password?</a></div>
+                </div>
 
-    <iframe class="lightbox" src="createaccount.html" width="500" height="500" id="fl4" style="border:none;"
-            webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div style="padding-top:30px" class="panel-body">
 
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                    <form id="loginform" class="form-horizontal" role="form">
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control user_account" name="username" value=""
+                                   placeholder="username or email">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="login-password" type="password" class="form-control" name="password"
+                                   placeholder="password">
+                        </div>
+
+
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+
+                            <div class="col-sm-12 controls">
+
+                                <button class="btn btn-primary" type="button" id="login_button"
+                                        onclick="doLogin()"
+                                        >
+                                    Login
+                                </button>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 control">
+                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                    Don't have an account!
+                                    <a href="#">
+                                        Sign Up Here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="lightbox" id="fl4">
+        <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title ">Create Account</div>
+                    <!--  <div style="float:right; font-size: 100%; position: relative; top:-10px">
+                        <a href="#">Forgot password?</a></div>-->
+                </div>
+
+                <div style="padding-top:30px" class="panel-body">
+
+                    <div style="display:none" id="signup-alert" class="alert alert-danger col-sm-12"></div>
+
+                    <form id="signupform" class="form-horizontal" role="form">
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="signup-username" type="text" class="form-control" name="username" value=""
+                                   placeholder="username or email">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="signup-password-1" type="password" class="form-control" name="password"
+                                   placeholder="password">
+                        </div>
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="signup-password" type="password" class="form-control" name="password"
+                                   placeholder="repeat password">
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="login-remember" type="checkbox" name="remember" value="1"> I agreed the
+                                    Terms and Conditions
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+
+                            <div class="col-sm-12 controls">
+                                <a id="close_button" href="#" class="btn btn-primary">Create Account </a>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-12 control">
+                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                    Already have an account?
+                                    <a href="#">
+                                        Login In Here
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 </header>
 <!--header end-->
@@ -238,6 +370,8 @@
 <!--everything above is header-->
 <!--everything above is header-->
 <!--everything above is header-->
+
+
 
 
 <!-- Messagea  -->
@@ -1012,7 +1146,10 @@
         </div>
     </div>
 </div>
-
+<script>
+    doUpdateUserName();
+    doUpdateLogAction();
+</script>
 
 </body>
 </html>
