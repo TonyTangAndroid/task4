@@ -1,4 +1,4 @@
-var KEY_USER_NAME = "key_usernamxxess";
+var KEY_USER_NAME = "key_usexxxrnamxxxxxess";
 $(function () {
     jQuery(document).on('click', '#close_button', function () {
         jQuery('.featherlight').click();
@@ -20,11 +20,12 @@ console.log("change button");
 
 function doLogin() {
     jQuery('.featherlight').click();
-//            var loginUserName = document.getElementById("user_account").value;
-    var loginUserName = "Tony";
+    var $uninput = $('.user_account');
+    var loginUserName = $uninput[0].value || $uninput[1].value;
     console.log("login username:" + loginUserName);
     setCookie(KEY_USER_NAME, loginUserName, 1);
     doUpdateUserName();
+    doUpdateLogAction();
 
 }
 
@@ -98,7 +99,6 @@ function doUpdateUserName() {
 function doUpdateLogAction() {
     var cookieName = getCookie(KEY_USER_NAME);
     if (cookieName !== "") {
-
         console.log("doUpdateLogAction User has login")
         document.getElementById("login_action_id").innerHTML = "Sign Out";
     } else {
