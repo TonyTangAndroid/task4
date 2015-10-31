@@ -22,12 +22,18 @@ console.log("change button");
 function doLogin() {
     jQuery('.featherlight').click();
     var $uninput = $('.user_account');
-    var loginUserName = $uninput[0].value || $uninput[1].value;
+    var loginUserName = null;
+    for (i = 0; i < $uninput.length; i++) {
+        if ($uninput[i].value !== null && $uninput[i].value !== "") {
+            loginUserName = $uninput[i].value;
+            break;
+        }
+    }
     console.log("login username:" + loginUserName);
     setCookie(KEY_USER_NAME, loginUserName, 1);
-    doUpdateUserName();
-    doUpdateLogAction();
-
+    //doUpdateUserName();
+    //doUpdateLogAction();
+    window.location.reload();
 }
 
 
@@ -42,7 +48,7 @@ function doCheckOut() {
 
 
     if (hasLogin()) {
-        location.href = 'checkout1.html';
+        location.href = 'checkout1_log.html';
     } else {
         location.href = 'login.html';
     }
