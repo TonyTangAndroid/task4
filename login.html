@@ -41,10 +41,12 @@
             $(".container1").hide();
             $("#hide").click(function () {
                 $(".container1").hide();
+                $(".container2").show();
                 document.getElementById("close_button").href = "checkout1.html";
             });
             $("#show").click(function () {
                 $(".container1").show();
+                $(".container2").hide();
                 document.getElementById("close_button").href = "checkout1_log.html";
             });
         });
@@ -91,7 +93,9 @@
                             <div class="radio">
                                 <label><input type="radio" name="optradio" id="hide" checked> No (We can create one
                                     later)</label>
+                                     
                             </div>
+                            
                             <div class="radio">
                                 <label><input type="radio" name="optradio" id="show"> Yes</label></div>
                             <div class="container1">
@@ -102,11 +106,7 @@
                                     <input id="login-password" type="password" class="form-control" name="password"
                                            placeholder="password">
                                 </div>
-                            </div>
-
-                            &nbsp
-
-                            <div style="margin-top:10px" class="form-group">
+                                <div style="margin-top:10px" class="form-group">
                                 <!-- Button -->
 
                                 <div class="col-sm-12 controls">
@@ -114,6 +114,22 @@
 
                                 </div>
                             </div>
+                            </div>
+                            <div class="container2">
+                                    
+                                    <div style="margin-top:10px" class="form-group">
+                                <!-- Button -->
+
+                                <div class="col-sm-12 controls">
+                                    <a href="checkout1.html" class="btn btn-success">Proceed</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            &nbsp
+
+                            
 
 
                         </form>
