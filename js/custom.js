@@ -34,7 +34,7 @@ function doLogin() {
 function doLoginToCheckout() {
     var loginUserName = document.getElementById("login-username").value;
     setCookie(KEY_USER_NAME, loginUserName, 1);
-    location.href = 'checkout1.html';
+    location.href = 'checkout1_log.html';
 }
 
 
