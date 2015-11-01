@@ -16,3 +16,4 @@ local.properties
 .idea/workspace.xml
 Icon
 .DS_Store
+*/.DS_Store
